@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MultiLang.LoginPage">
+<ContentPage.Content>
+  <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#EEEEEE">
+    <Image x:Name="LocaleImage" WidthRequest="48" HeightRequest="24" Margin="5, 5, 5, 5" HorizontalOptions="End" VerticalOptions="Start">
+      <Image.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnLocaleTapped"></TapGestureRecognizer>
+      </Image.GestureRecognizers>
+    </Image>
+    <Button x:Name="FacebookLogin" BackgroundColor="#3B5998" TextColor="#FFFFFF" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Clicked="OnFacebookClicked"/>
+    <Button x:Name="GoogleSignin" BackgroundColor="#d34836" TextColor="#FFFFFF" HorizontalOptions="Center" VerticalOptions="StartAndExpand" Clicked="OnGoogleClicked" />
+  </StackLayout>
+</ContentPage.Content>
+</ContentPage>

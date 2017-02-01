@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MultiLang.ProfilePage">
+  <ContentPage.Content>
+    <ScrollView x:Name="MainScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#EEEEEE">
+    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+      <Image x:Name="LocaleImage" WidthRequest="48" HeightRequest="24" Margin="5, 5, 5, 5" HorizontalOptions="End" VerticalOptions="Start">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnLocaleTapped"></TapGestureRecognizer>
+        </Image.GestureRecognizers>
+      </Image>
+      <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Label x:Name="ProfilePageLabel" HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
+        <Label x:Name="UsernameLabel" HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Image x:Name="ProfilePic" HorizontalOptions="Center" VerticalOptions="StartAndExpand" HeightRequest="350"></Image>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Padding="5, 5, 5, 5">
+          <Button x:Name="GoBackButton" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" Clicked="OnGoBackClicked" />
+          <Button x:Name="SignOutButton" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Clicked="OnSignOutClicked" />
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+      </ScrollView>
+  </ContentPage.Content>
+</ContentPage>
