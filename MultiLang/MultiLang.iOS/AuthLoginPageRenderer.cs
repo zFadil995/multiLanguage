@@ -65,18 +65,32 @@ namespace MultiLang.iOS
                     else
                         page.FailedLoginAction.Invoke();
 
+                    DismissViewController(true, null);
+
                 }
                 else
                 {
                     page.FailedLoginAction.Invoke();
                 }
-
-                PresentViewController(auth.GetUI(), true, null);
             };
         }
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+            if (this.Title == "Facebook")
+                if (Settings.FacebookState == "" && Settings.FacebookAccessToken == "" &&
+                    Settings.FacebookExpiresIn == "")
+                    PresentViewController(auth.GetUI(), true, null);
+                else
+                {
+                }
+            else if (this.Title == "Google")
+                if (Settings.GoogleAccessToken == "" && Settings.GoogleExpiresIn == "" &&
+                    Settings.GoogleIDToken == "" && Settings.GoogleTokenType == "")
+                    PresentViewController(auth.GetUI(), true, null);
+                else
+                {
+                }
         }
 
     }

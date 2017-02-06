@@ -4,7 +4,6 @@ using MultiLang.UWP;
 using Xamarin.Auth;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
-using Windows.UI.Xaml;
 
 [assembly: ExportRenderer(typeof(AuthLoginPage), typeof(AuthLoginPageRenderer))]
 namespace MultiLang.UWP
@@ -73,8 +72,9 @@ namespace MultiLang.UWP
                 }
             };
 
-            Windows.UI.Xaml.Controls.Frame rootFrame = Window.Current.Content as Windows.UI.Xaml.Controls.Frame;
+            var rootFrame = new Windows.UI.Xaml.Controls.Frame();
             rootFrame.Navigate(auth.GetUI(), null);
+            
         }
     }
 }
