@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using Windows.UI.Xaml;
 using MultiLang;
 using MultiLang.UWP;
 using Xamarin.Auth;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
+using Frame = Windows.UI.Xaml.Controls.Frame;
 
 [assembly: ExportRenderer(typeof(AuthLoginPage), typeof(AuthLoginPageRenderer))]
 namespace MultiLang.UWP
@@ -72,8 +74,8 @@ namespace MultiLang.UWP
                 }
             };
 
-            var rootFrame = new Windows.UI.Xaml.Controls.Frame();
-            rootFrame.Navigate(auth.GetUI(), null);
+            var rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(auth.GetUI(), auth);
             
         }
     }
