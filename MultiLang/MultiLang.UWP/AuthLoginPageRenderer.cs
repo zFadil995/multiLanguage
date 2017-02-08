@@ -75,7 +75,7 @@ namespace MultiLang.UWP
             };
 
             var rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(auth.GetUI(), auth);
+            rootFrame.Navigate(auth.GetUI(), null);
             
         }
     }
